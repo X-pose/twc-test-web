@@ -1,0 +1,9 @@
+
+@font-face {
+  font-family: FuturaMdBt;
+  src:url('./assets/fonts/FuturaMediumBT.ttf')
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
