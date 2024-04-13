@@ -8,6 +8,12 @@ export default {
     extend: {
       fontFamily: {
         FuturaMdBt :['FuturaMdBt', 'sans']
+        
+      },
+      backgroundImage: {
+        'eclipse-green': "url('./src/assets/img/Ellipse.svg')",
+        'doodle-art':"url('./src/assets/img/DoodleTexture.svg')"
+        
       }
     },
   },
