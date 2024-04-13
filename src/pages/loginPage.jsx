@@ -3,7 +3,7 @@ import twcLoginArt from '../assets/img/TWCImgLogin.svg'
 import Login from '../components/LoginComponent'
 import Registration from '../components/RegisterComponent'
 
-function loginPage() {
+function LoginPage() {
 
   const [showLogin, setShowLogin] = useState(true)
 
@@ -16,7 +16,7 @@ function loginPage() {
   return (
     <div className='w-screen h-screen flex bg-doodle-art bg-contain'>
 
-      <div className=" w-6/12 h-screen flex justify-center items-center flex-col bg-round-ellipse bg-right bg-center bg-no-repeat">
+      <div className=" w-6/12 h-screen flex justify-center items-center flex-col bg-round-ellipse bg-right  bg-no-repeat">
         {showLogin ?
           <Login toggleView = {toggleView}/>
           :
@@ -30,4 +30,4 @@ function loginPage() {
   )
 }
 
-export default loginPage
+export default LoginPage

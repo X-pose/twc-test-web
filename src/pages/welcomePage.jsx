@@ -3,7 +3,7 @@ import twcLoginArt from '../assets/img/TWCImgMain.svg'
 import logoutImg from '../assets/img/logOutCircle.svg'
 import { useNavigate } from 'react-router-dom'
 
-function welcomePage() {
+function WelcomePage() {
 
   const navigate = useNavigate()
   const [loginState, setLoginState] = useState(false)
@@ -62,4 +62,4 @@ function welcomePage() {
   )
 }
 
-export default welcomePage
+export default WelcomePage

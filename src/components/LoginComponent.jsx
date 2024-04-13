@@ -40,18 +40,6 @@ export default function Login({toggleView}) {
   }
 
 
-  const validateEmail = () => {
-
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-    if (!emailPattern.test(email)) {
-      setEmailError('Invalid email address')
-      return false
-    } else {
-      setEmailError('')
-      return true
-    }
-  }
-
   const validatePassword = () => {
 
     if (password.length < 8) {
@@ -65,12 +53,12 @@ export default function Login({toggleView}) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    //validating user inputs
-    const validEmail = validateEmail()
+    
+    //validating user inputs 
     const validPassword = validatePassword()
 
 
-    if (validEmail && validPassword) {
+    if (validPassword) {
       //Send logic here.
       const payload = {
         email: email,

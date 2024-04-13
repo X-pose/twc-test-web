@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from 'axios'
 
 export default function Registration({toggleView}) {
 
@@ -25,17 +26,7 @@ export default function Registration({toggleView}) {
         setConfirmPassword(e.target.value)
     }
 
-    const validateEmail = () => {
 
-        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-        if (!emailPattern.test(email)) {
-            setEmailError('Invalid email address')
-            return false
-        } else {
-            setEmailError('')
-            return true
-        }
-    }
 
     const validatePassword = () => {
 
@@ -62,11 +53,11 @@ export default function Registration({toggleView}) {
     const handleRegSubmit = async (e) => {
         e.preventDefault()
         //validating user inputs
-        const validEmail = validateEmail()
+
         const validPassword = validatePassword()
         const passwordMatch = checkPasswordMatch()
 
-        if (validEmail && validPassword && passwordMatch) {
+        if (validPassword && passwordMatch) {
             //Send logic here.
             const payload = {
                 email: email,

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react' 
 
-function allContactPage() {
+function AllContactPage() {
   // Add states, hooks, and other functions
   // Example: const [state, setState] = useState(initialState)
   // Example: useEffect(() => { /* effect logic */ }, [dependencies])
@@ -13,4 +13,4 @@ function allContactPage() {
   )
 }
 
-export default allContactPage
+export default AllContactPage

@@ -15,6 +15,7 @@ export default {
         'doodle-art':"url('./src/assets/img/DoodleTexture.svg')",
         'angled-ellipse': "url('./src/assets/img/AngledEllipse.svg')"
         
+        
       }
     },
   },
