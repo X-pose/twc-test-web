@@ -11,8 +11,9 @@ export default {
         
       },
       backgroundImage: {
-        'eclipse-green': "url('./src/assets/img/Ellipse.svg')",
-        'doodle-art':"url('./src/assets/img/DoodleTexture.svg')"
+        'round-ellipse': "url('./src/assets/img/Ellipse.svg')",
+        'doodle-art':"url('./src/assets/img/DoodleTexture.svg')",
+        'angled-ellipse': "url('./src/assets/img/AngledEllipse.svg')"
         
       }
     },
