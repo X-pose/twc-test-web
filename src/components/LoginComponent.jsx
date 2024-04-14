@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
+import { jwtDecode } from 'jwt-decode'
 
 
 
-export default function Login({toggleView}) {
+export default function Login({ toggleView }) {
 
   const navigate = useNavigate()
   const [email, setEmail] = useState('')
@@ -25,11 +26,26 @@ export default function Login({toggleView}) {
 
     if (retrivedToken) {
       console.log('Retrived TOken : ' + retrivedToken)
-      setLoginState(true)
-      navigate('/')
+
+      try {
+        const decodedToken = jwtDecode(retrivedToken)
+
+        // getting expiration time in seconds
+        const currentTime = Date.now() / 1000
+
+        if (decodedToken.exp > currentTime) {
+          setLoginState(true)
+          navigate('/')
+        }
+
+      } catch (err) {
+        console.error("Error decoding token:", err)
+      }
+
     }
 
   }
+  
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value)
@@ -53,7 +69,7 @@ export default function Login({toggleView}) {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    
+
     //validating user inputs 
     const validPassword = validatePassword()
 

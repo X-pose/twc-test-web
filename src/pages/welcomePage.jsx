@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import twcLoginArt from '../assets/img/TWCImgMain.svg'
 import logoutImg from '../assets/img/logOutCircle.svg'
 import { useNavigate } from 'react-router-dom'
+import { jwtDecode } from 'jwt-decode'
 
 function WelcomePage() {
 
@@ -10,20 +11,36 @@ function WelcomePage() {
 
   useEffect(() => {
 
-    checkLoginStatus()
+   checkLoginState()
 
    
   }, [loginState])
 
-  const checkLoginStatus = async () => {
-    const retrievedToken = await localStorage.getItem('TWCtoken')
+  const checkLoginState = async () => {
+    const retrivedToken = await localStorage.getItem('TWCtoken')
 
-    if (retrievedToken !== null) {
-      console.log('Retrieved Token : ' + retrievedToken)
-      setLoginState(true)
-    } else {
-      navigate('/login')
+    if (retrivedToken) {
+      console.log('Retrived TOken : ' + retrivedToken)
+
+      try {
+        const decodedToken = jwtDecode(retrivedToken)
+
+        // getting expiration time in seconds
+        const currentTime = Date.now() / 1000
+
+        if (decodedToken.exp > currentTime) {
+          setLoginState(true)
+        
+        } else {
+          navigate('/login')
+        }
+
+      } catch (err) {
+        console.error("Error decoding token:", err)
+      }
+
     }
+
   }
 
   const handleAddContactBtn = () => {
