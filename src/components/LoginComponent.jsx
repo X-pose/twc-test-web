@@ -36,6 +36,9 @@ export default function Login({ toggleView }) {
         if (decodedToken.exp > currentTime) {
           setLoginState(true)
           navigate('/')
+        }else{
+          //Removing the token 
+          await localStorage.removeItem('TWCtoken')
         }
 
       } catch (err) {

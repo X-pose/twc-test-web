@@ -14,7 +14,7 @@ function LoginPage() {
 
 
   return (
-    <div className='w-screen h-screen flex bg-doodle-art bg-contain'>
+    <div className='w-screen h-screen flex bg-doodle-art bg-contain overflow-hidden'>
 
       <div className=" w-6/12 h-screen flex justify-center items-center flex-col bg-round-ellipse bg-right  bg-no-repeat">
         {showLogin ?
