@@ -54,9 +54,9 @@ function WelcomePage() {
   return (
     <div className='w-screen h-screen flex bg-doodle-art bg-contain overflow-hidden'>
       <div className=' w-screen relative h-screen flex flex-col bg-angled-ellipse bg-center bg-no-repeat items-center justify-center'>
-        <div className=' h-fit w-fit flex justify-start flex-col text-white ml-4 mr-4 pl-64 pr-64'>
-          <div className='w-fit h-fit mb-20 flex justify-center items-center flex-col'>
-            <img src={twcLoginArt} className=' size-44' />
+        <div className=' h-screen w-fit flex justify-start flex-col text-white ml-4 mr-4 pl-64 pr-64'>
+          <div className='w-fit h-fit mt-10 mb-20 flex justify-center items-center flex-col'>
+            <img src={twcLoginArt} className=' size-36' />
           </div>
           <span className='font-FuturaMdBt font-bold text-5xl'>Welcome,</span>
           <span className='font-FuturaMdBt mt-8 font-normal text-4xl '>This is where your contacts will live. Click the button below  to add a new contact.</span>

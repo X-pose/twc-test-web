@@ -173,10 +173,10 @@ export default function ContactsTable() {
 
             <div className='flex flex-row font-FuturaMdBt font-bold text-[#083F46] justify-start'>
                 <span className="px-4 py-2 w-24"></span>
-                <span className="px-4 py-2 mr-10 w-44">Full Name</span>
-                <span className="px-4 py-2 mr-10 w-28 ">Gender</span>
-                <span className="px-4 py-2 mr-10 w-56">Email</span>
-                <span className="px-4 py-2 mr-10 w-40">Phone Number</span>
+                <span className="px-4 py-2 mr-5 w-44">Full Name</span>
+                <span className="px-4 py-2 mr-5 w-28 ">Gender</span>
+                <span className="px-4 py-2 mr-5 w-56">Email</span>
+                <span className="px-4 py-2 mr-5 w-40">Phone Number</span>
             </div>
 
             <div className=' overflow-y-auto overflow-x-auto'>
@@ -187,12 +187,12 @@ export default function ContactsTable() {
 
                             <tr key={item._id} className='flex justify-start items-center' >
                                 <td className="px-4 py-1 w-24"><img src={getAvatar(item.gender)} /></td>
-                                <td className=" mr-10 w-44 ">{editableRows[item._id] ? <div className='flex flex-row  bg-gray-300'> <input type="text" defaultValue={item.fullName} onChange={handleNameUpdate} className=' w-full px-4 py-1  bg-gray-300' /> <img src = {editRowRectangleImg} className='mr-1'/> </div>:  <div className='px-4 py-1'>{item.fullName}</div> }</td>
-                                <td className=" mr-10 w-32 ">{editableRows[item._id] ? (<div className="flex flex-row  bg-gray-300"><input type="text" value={updatedGender || item.gender} className="  px-4 py-1 w-full bg-gray-300" readOnly onChange={handleGenderUpdate} /><button onClick={() => toggleGender()}> <img src = {editRowSwitchGenderImg} className=' w-8 h-fit mr-6'/></button> </div>  ) : ( <div className='px-4 py-1'>{item.gender}</div> )} </td>
+                                <td className=" mr-5 w-44 ">{editableRows[item._id] ? <div className='flex flex-row  bg-[#E7ECED]'> <input type="text" defaultValue={item.fullName} onChange={handleNameUpdate} className=' w-full px-4 py-1  bg-[#E7ECED]' /> <img src = {editRowRectangleImg} className='mr-1'/> </div>:  <div className='px-4 py-1'>{item.fullName}</div> }</td>
+                                <td className=" mr-5 w-28 ">{editableRows[item._id] ? (<div className="flex flex-row  bg-[#E7ECED]"><input type="text" value={updatedGender || item.gender} className="  pl-4 py-1 w-full bg-[#E7ECED]" readOnly onChange={handleGenderUpdate} /><button onClick={() => toggleGender()}> <img src = {editRowSwitchGenderImg} className=' w-5  h-fit mr-6'/></button> </div>  ) : ( <div className='px-4 py-1'>{item.gender}</div> )} </td>
 
-                                <td className=" mr-10 w-56">{editableRows[item._id] ? <div className='flex flex-row  bg-gray-300'><input type="text" defaultValue={item.email} onChange={handleEmailUpdate} className=' px-4 py-1 w-full  bg-gray-300' /> <img src = {editRowRectangleImg} className='mr-1'/> </div> : <div className='px-4 py-1'>{item.email}</div> }</td>
-                                <td className="mr-10 w-40">{editableRows[item._id] ? <div className='flex flex-row  bg-gray-300'><input type="text" defaultValue={item.phoneNumber} onChange={handlePhoneNoUpdate} className=' px-4 py-1 w-full bg-gray-300' /> <img src = {editRowRectangleImg} className='mr-1'/> </div>:<div className='px-4 py-1'>{item.phoneNumber}</div> }</td>
-                                <td className="mr-10 w-20 flex ">
+                                <td className=" mr-5 w-56">{editableRows[item._id] ? <div className='flex flex-row  bg-[#E7ECED]'><input type="text" defaultValue={item.email} onChange={handleEmailUpdate} className=' px-4 py-1 w-full  bg-[#E7ECED]' /> <img src = {editRowRectangleImg} className='mr-1'/> </div> : <div className='px-4 py-1'>{item.email}</div> }</td>
+                                <td className="mr-5 w-40">{editableRows[item._id] ? <div className='flex flex-row  bg-[#E7ECED]'><input type="text" defaultValue={item.phoneNumber} onChange={handlePhoneNoUpdate} className=' px-4 py-1 w-full bg-[#E7ECED]' /> <img src = {editRowRectangleImg} className='mr-1'/> </div>:<div className='px-4 py-1'>{item.phoneNumber}</div> }</td>
+                                <td className="mr-5 w-20 flex ">
                                     {editableRows[item._id] ?
                                         <div>
                                             <button onClick={() => handleSave(item._id)} className='font-FuturaMdBt w-fit h-fit px-8  py-2 font-medium bg-[#083F46] text-white rounded-3xl'>save</button>

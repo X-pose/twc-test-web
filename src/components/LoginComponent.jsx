@@ -110,7 +110,7 @@ export default function Login({ toggleView }) {
       <div>
         <form onSubmit={handleSubmit}>
           <div >
-            <input className=' font-FuturaMdBt w-96 h-12 pl-10 mt-9 bg-white font-extrabold text-[#083F46] rounded-3xl'
+            <input className='placeholder-[#083F46] ::placeholder font-FuturaMdBt w-96 h-12 pl-10 mt-9 bg-white font-extrabold text-[#083F46] rounded-3xl'
               type="email"
               id="email"
               name="email"
@@ -123,7 +123,7 @@ export default function Login({ toggleView }) {
             {emailError && <p className="text-red-500">{emailError}</p>}
           </div>
           <div >
-            <input className='font-FuturaMdBt w-96 h-12 pl-10 mt-9 bg-white font-extrabold text-[#083F46] rounded-3xl'
+            <input className=' placeholder-[#083F46] ::placeholder font-FuturaMdBt w-96 h-12 pl-10 mt-9 bg-white font-extrabold text-[#083F46] rounded-3xl'
               type="password"
               id="password"
               name="password"

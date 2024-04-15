@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 export default function Registration({toggleView}) {
 
-
+    const navigate = useNavigate()
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
@@ -70,7 +71,7 @@ export default function Registration({toggleView}) {
 
                 // Store the token in localStorage
                 localStorage.setItem('TWCtoken', token)
-                setLoginState(true)
+                navigate('/')
 
             }).catch(error => {
                 setAuthenticateError("User registration failed!")
@@ -90,7 +91,7 @@ export default function Registration({toggleView}) {
             <div>
                 <form onSubmit={handleRegSubmit}>
                     <div >
-                        <input className=' font-FuturaMdBt w-96 h-12 pl-10 mt-9 bg-white font-extrabold text-[#083F46] rounded-3xl'
+                        <input className='placeholder-[#083F46] ::placeholder font-FuturaMdBt w-96 h-12 pl-10 mt-9 bg-white font-extrabold text-[#083F46] rounded-3xl'
                             type="email"
                             id="email"
                             name="email"
@@ -102,7 +103,7 @@ export default function Registration({toggleView}) {
                         {emailError && <p className="text-red-500">{emailError}</p>}
                     </div>
                     <div >
-                        <input className='font-FuturaMdBt w-96 h-12 pl-10 mt-9 bg-white font-extrabold text-[#083F46] rounded-3xl'
+                        <input className='placeholder-[#083F46] ::placeholder font-FuturaMdBt w-96 h-12 pl-10 mt-9 bg-white font-extrabold text-[#083F46] rounded-3xl'
                             type="password"
                             id="password"
                             name="password"
@@ -115,7 +116,7 @@ export default function Registration({toggleView}) {
                         {passwordError && <p className=" text-red-500">{passwordError}</p>}
                     </div>
                     <div >
-                        <input className='font-FuturaMdBt w-96 h-12 pl-10 mt-9 bg-white font-extrabold text-[#083F46] rounded-3xl'
+                        <input className='placeholder-[#083F46] ::placeholder font-FuturaMdBt w-96 h-12 pl-10 mt-9 bg-white font-extrabold text-[#083F46] rounded-3xl'
                             type="password"
                             id="password"
                             name="password"
