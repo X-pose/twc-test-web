@@ -113,7 +113,7 @@ function NewContactPage() {
             <img src={twcLoginArt} className=' size-36' />
           </div>
           <div>
-            <span className='font-FuturaMdBt font-bold text-5xl'>New contact</span>
+            <span className='font-FutuBd font-bold text-5xl'>New contact</span>
           </div>
           <div className='mt-16'>
             <form onSubmit={handleAddContactBtn} className="grid grid-cols-2 gap-10">

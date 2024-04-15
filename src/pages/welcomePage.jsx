@@ -58,7 +58,7 @@ function WelcomePage() {
           <div className='w-fit h-fit mt-10 mb-20 flex justify-center items-center flex-col'>
             <img src={twcLoginArt} className=' size-36' />
           </div>
-          <span className='font-FuturaMdBt font-bold text-5xl'>Welcome,</span>
+          <span className=' font-FutuBd font-bold text-5xl'>Welcome,</span>
           <span className='font-FuturaMdBt mt-8 font-normal text-4xl '>This is where your contacts will live. Click the button below  to add a new contact.</span>
           <button onClick={handleAddContactBtn} className=' mt-20 font-FuturaMdBt w-fit h-fit pl-8 pr-8 pt-2 pb-2 font-medium text-white border-white border-2 rounded-3xl'> add your first contact</button>
         </div>

@@ -171,7 +171,7 @@ export default function ContactsTable() {
     return (
         <div className=' w-fit h-72 flex  px-8 py-4  bg-white rounded-3xl flex-col'>
 
-            <div className='flex flex-row font-FuturaMdBt font-bold text-[#083F46] justify-start'>
+            <div className='flex flex-row font-FutuBd font-bold text-[#083F46] justify-start'>
                 <span className="px-4 py-2 w-24"></span>
                 <span className="px-4 py-2 mr-5 w-44">Full Name</span>
                 <span className="px-4 py-2 mr-5 w-28 ">Gender</span>
@@ -180,7 +180,7 @@ export default function ContactsTable() {
             </div>
 
             <div className=' overflow-y-auto overflow-x-auto'>
-                <table className="table-auto  font-FuturaMdBt text-[#083F46]  border-collapse border-transparent">
+                <table className="table-auto  font-FuturaMdBt  text-[#083F46]  border-collapse border-transparent">
 
                     <tbody >
                         {allContacts.map((item) => (

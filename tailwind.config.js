@@ -7,7 +7,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        FuturaMdBt :['FuturaMdBt', 'sans']
+        FuturaMdBt :['FuturaMdBt', 'sans'],
+        FutuBd : ['FutuBd', 'sans']
         
       },
       backgroundImage: {

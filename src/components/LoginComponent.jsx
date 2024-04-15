@@ -103,7 +103,7 @@ export default function Login({ toggleView }) {
 
     <div className='w-fit h-fit'>
       <div className=' w-fit h-fit text-white flex flex-col justify-start items-start'>
-        <span className=' font-FuturaMdBt font-bold text-5xl'>Hi there,</span>
+        <span className=' font-FutuBd font-bold text-5xl'>Hi there,</span>
         <br />
         <span className=' font-FuturaMdBt font-normal text-4xl '>welcome to our <br /> contacts portal</span>
       </div>

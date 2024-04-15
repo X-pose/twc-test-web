@@ -61,8 +61,8 @@ function AllContactPage() {
           </div>
 
           <div className='flex justify-between flex-row items-center mb-5'>
-            <span className='font-FuturaMdBt font-bold text-5xl'>Contacts</span>
-            <button onClick={handleAddContactBtn} className=' font-FuturaMdBt w-fit h-fit pl-8 pr-8 pt-2 pb-2 font-medium text-white border-white border-2 rounded-3xl'> add your first contact</button>
+            <span className='font-FutuBd font-bold text-5xl'>Contacts</span>
+            <button onClick={handleAddContactBtn} className=' font-FuturaMdBt w-fit h-fit pl-8 pr-8 pt-2 pb-2 font-medium text-white border-white border-2 rounded-3xl'> add new contact</button>
 
           </div>
 

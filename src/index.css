@@ -4,6 +4,11 @@
   src:url('./assets/fonts/FuturaMediumBT.ttf')
 }
 
+@font-face{
+  font-family: FutuBd;
+  src:url('./assets/fonts/FutuBd.ttf')
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

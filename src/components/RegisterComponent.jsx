@@ -86,7 +86,7 @@ export default function Registration({toggleView}) {
     return (
         <div className='w-fit h-fit'>
             <div className=' w-fit h-fit text-white flex flex-col justify-start items-start'>
-                <span className=' font-FuturaMdBt font-bold text-5xl'>Register Now!</span>
+                <span className=' font-FutuBd font-bold text-5xl'>Register Now!</span>
             </div>
             <div>
                 <form onSubmit={handleRegSubmit}>
