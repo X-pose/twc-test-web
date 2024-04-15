@@ -46,6 +46,10 @@ function AllContactPage() {
 
   }
 
+  const handleAddContactBtn = () => {
+    navigate('/contacts/new')
+  }
+
 
  
 
@@ -53,14 +57,14 @@ function AllContactPage() {
 
     <div className='w-screen h-screen flex bg-doodle-art bg-contain overflow-hidden'>
       <div className=' w-screen h-screen relative flex flex-col bg-angled-ellipse bg-center bg-no-repeat items-center'>
-        <div className=' h-fit w-fit flex justify-start flex-col text-white mt-10 mx-4 '>
+        <div className=' scale-90 h-fit w-fit flex justify-start flex-col text-white mt-10 mx-4 '>
           <div className='w-fit h-fit mb-10 flex justify-center items-center flex-col'>
             <img src={twcLoginArt} className=' size-44' />
           </div>
 
           <div className='flex justify-between flex-row items-center mb-5'>
             <span className='font-FuturaMdBt font-bold text-5xl'>Contacts</span>
-            <button onClick={'handleAddContactBtn'} className=' font-FuturaMdBt w-fit h-fit pl-8 pr-8 pt-2 pb-2 font-medium text-white border-white border-2 rounded-3xl'> add your first contact</button>
+            <button onClick={handleAddContactBtn} className=' font-FuturaMdBt w-fit h-fit pl-8 pr-8 pt-2 pb-2 font-medium text-white border-white border-2 rounded-3xl'> add your first contact</button>
 
           </div>
 
