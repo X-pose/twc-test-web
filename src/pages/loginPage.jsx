@@ -1,3 +1,7 @@
+/**
+ * @description - This is login page. It conditionally renders login component & registration component.
+ */
+//Imports
 import React, {useState } from 'react'
 import twcLoginArt from '../assets/img/TWCImgLogin.svg'
 import Login from '../components/LoginComponent'

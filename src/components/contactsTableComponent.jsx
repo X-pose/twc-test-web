@@ -1,3 +1,8 @@
+/**
+ * @description - This component is used to display the contacts in a table view. Also this component handles the model activation to display save success, confirm delete models
+ */
+
+//imoports
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import maleAvatar from '../assets/img/maleAvatar.png'
@@ -10,6 +15,7 @@ import editRowSwitchGenderImg from '../assets/img/genderSwitch.svg'
 
 export default function ContactsTable() {
 
+    //States
     const [allContacts, setAllContacts] = useState([])
     const [editableRows, setEditableRows] = useState(false)
     const [updatedName, setUpdatedName] = useState('')
@@ -23,10 +29,12 @@ export default function ContactsTable() {
 
     useEffect(() => {
 
+        //Loads all the contacts from DB when page loads
         loadAllContacts()
 
-    }, [openSaveModel, openDeleteModel])
+    }, [openSaveModel, openDeleteModel]) //useEffect is running everytime either openSaveModel state or openDeleteModel state updates inorder to get the updated contact list after the modification(by edit or delete)
 
+    //State change handlers
     const handleNameUpdate = (e) => {
         setUpdatedName(e.target.value)
     }
@@ -40,6 +48,7 @@ export default function ContactsTable() {
         setUpdatedPhoneNo(e.target.value)
     }
 
+    //Updates the row with new data, opens the save success model
     const handleSave = async (id) => {
 
         const token = localStorage.getItem('TWCtoken')
@@ -69,18 +78,22 @@ export default function ContactsTable() {
         }).catch(error => {
             console.log("Error at contact Update : " + error)
         }).finally(() => {
+            //Clean up - this fucntion clears the updated values from the relevent states after an update
             handleSuccessfulUpdate()
         })
 
+        //Sets the editable state of row
         handleEditClick(id)
 
 
     }
 
+    //Retrieves the selected contact's _id
     const getCurrentContact = (id) => {
 
         return allContacts.find(contact => contact._id === id)
     }
+
 
     const handleSuccessfulUpdate = () => {
 
@@ -91,6 +104,7 @@ export default function ContactsTable() {
 
     }
 
+    //Stores the selected contact in a state(to access fullName property later on) and opens up the delete confirm model
     const handleDelete = (id) => {
 
         const currentContact = getCurrentContact(id)
@@ -100,6 +114,7 @@ export default function ContactsTable() {
         setDeleteModelOpen(true)
     }
 
+    //Deletes the contact from DB
     const deleteContact = async () => {
 
         const token = localStorage.getItem('TWCtoken')
@@ -118,17 +133,20 @@ export default function ContactsTable() {
         }).catch(error => {
             console.log("Error at contact delete : " + error)
         }).finally(() => {
+            //Clean up - clears the state back to normal
             setContactToBeDeleted('')
 
         })
     }
 
+    //Handles the "Okay" btn in delete model. 
     const handleDeleteSuccess = () => {
 
         setDeleteModelOpen(false)
         setDeleteSuccess(false)
     }
 
+    //Loads all the contacts from the DB as a list
     const loadAllContacts = async () => {
 
         const token = localStorage.getItem('TWCtoken')
@@ -148,6 +166,7 @@ export default function ContactsTable() {
         })
     }
 
+    //This function determines avatar type to be used by the each row based on contact's gender
     const getAvatar = (gender) => {
         if (gender === 'Male') {
             return maleAvatar
@@ -156,6 +175,7 @@ export default function ContactsTable() {
         }
     }
 
+    //Changes the row editable state
     const handleEditClick = (id) => {
         console.log("Row ID : " + id)
         setEditableRows(prevState => ({
@@ -164,6 +184,7 @@ export default function ContactsTable() {
         }))
     }
 
+    //Handles the gender toggling in row edit mode
     const toggleGender = () => {
         setUpdatedGender(prevGender => prevGender === "Male" ? "Female" : "Male")
     }
@@ -197,8 +218,8 @@ export default function ContactsTable() {
                                         <div>
                                             <button onClick={() => handleSave(item._id)} className='font-FuturaMdBt w-fit h-fit px-8  py-2 font-medium bg-[#083F46] text-white rounded-3xl'>save</button>
                                         </div> : <div className='flex flex-row justify-evenly gap-6'>
-                                            <img src={editIcon} className=' cursor-pointer' onClick={() => handleEditClick(item._id)} />
-                                            <img src={deleteIcon} className=' cursor-pointer' onClick={() => handleDelete(item._id)} />
+                                            <img src={editIcon} className='hover:scale-105 cursor-pointer' onClick={() => handleEditClick(item._id)} />
+                                            <img src={deleteIcon} className='hover:scale-105 cursor-pointer' onClick={() => handleDelete(item._id)} />
                                         </div>}
 
                                 </td>
@@ -247,8 +268,8 @@ export default function ContactsTable() {
                         </div>
                     </div>
                 ) : (
+                    
                     <div className="text-center w-full">
-
                         <div className="mx-auto my-4 flex justify-center">
 
                             <p className=" w-fit mb-5 text-xl font-semibold text-[#083F46]">

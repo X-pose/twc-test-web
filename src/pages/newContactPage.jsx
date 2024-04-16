@@ -1,3 +1,7 @@
+/**
+ * @description - This page handles adding new contacts to the system
+ */
+//Imports
 import React, { useEffect, useState } from 'react'
 import twcLoginArt from '../assets/img/TWCImgMain.svg'
 import Logout from '../components/LogoutComponent'
@@ -8,8 +12,8 @@ import { jwtDecode } from 'jwt-decode'
 function NewContactPage() {
 
   const navigate = useNavigate()
+  //States
   const [loginState, setLoginState] = useState(false)
-
   const [email, setEmail] = useState('')
   const [fullName, setFullName] = useState('')
   const [phoneNo, setPhoneNo] = useState('')
@@ -20,8 +24,9 @@ function NewContactPage() {
     checkLoginState()
 
 
-  }, [loginState])
+  }, [loginState])//useEffect runs every time loginState changes to redirect the user to the relevant page
 
+  //Checks for the login state by validating JWT token
   const checkLoginState = async () => {
     const retrivedToken = await localStorage.getItem('TWCtoken')
 
@@ -52,6 +57,7 @@ function NewContactPage() {
   }
 
 
+  //State change handlers
   const handleEmailChange = (e) => {
     setEmail(e.target.value)
   }
@@ -68,6 +74,7 @@ function NewContactPage() {
     setGender(e.target.value)
   }
 
+  //Creates a new contact in DB
   const handleAddContactBtn = async (e) => {
 
     e.preventDefault()
@@ -93,7 +100,7 @@ function NewContactPage() {
       console.log(res.data)
 
       if (res.data) {
-        navigate('/contacts')
+        navigate('/contacts') //Navigates to Allcontacts page
       }
 
 
@@ -180,7 +187,7 @@ function NewContactPage() {
                 </label>
               </div>
               <div className='col-span-2'>
-                <button type="submit" className='mt-10 font-FuturaMdBt w-fit h-fit pl-8 pr-8 pt-2 pb-2 font-medium text-white border-white border-2 rounded-3xl'>Add Your First Contact</button>
+                <button type="submit" className='hover:scale-105 mt-10 font-FuturaMdBt w-fit h-fit pl-8 pr-8 pt-2 pb-2 font-medium text-white border-white border-2 rounded-3xl'>Add Your First Contact</button>
               </div>
             </form>
 

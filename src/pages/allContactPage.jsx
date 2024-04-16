@@ -1,3 +1,7 @@
+/**
+ * @description - This page displays the all contacts in the system
+ */
+//Imports
 import React, { useEffect, useState } from 'react'
 import twcLoginArt from '../assets/img/TWCImgMain.svg'
 import Logout from '../components/LogoutComponent'
@@ -14,9 +18,9 @@ function AllContactPage() {
   useEffect(() => {
     checkLoginState()
 
-  }, [loginState])
+  }, [loginState])//useEffect runs every time loginState changes to redirect the user to the relevant page
 
-
+  //Checks for the login state by validating JWT token
   const checkLoginState = async () => {
     const retrivedToken = await localStorage.getItem('TWCtoken')
 
@@ -46,6 +50,7 @@ function AllContactPage() {
 
   }
 
+  //Redirects user to "add new contact" page
   const handleAddContactBtn = () => {
     navigate('/contacts/new')
   }
@@ -62,7 +67,7 @@ function AllContactPage() {
 
           <div className='flex justify-between flex-row items-center mb-5'>
             <span className='font-FutuBd font-bold text-5xl'>Contacts</span>
-            <button onClick={handleAddContactBtn} className=' font-FuturaMdBt w-fit h-fit pl-8 pr-8 pt-2 pb-2 font-medium text-white border-white border-2 rounded-3xl'> add new contact</button>
+            <button onClick={handleAddContactBtn} className='hover:scale-105 font-FuturaMdBt w-fit h-fit pl-8 pr-8 pt-2 pb-2 font-medium text-white border-white border-2 rounded-3xl'> add new contact</button>
 
           </div>
 

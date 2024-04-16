@@ -1,3 +1,7 @@
+/**
+ * @description - This page is responsible for welcoming the user. Allows user to navigates to the "add new contacts" page
+ */
+//Imports
 import React, { useEffect, useState } from 'react'
 import twcLoginArt from '../assets/img/TWCImgMain.svg'
 import Logout from '../components/LogoutComponent'
@@ -7,6 +11,7 @@ import { jwtDecode } from 'jwt-decode'
 function WelcomePage() {
 
   const navigate = useNavigate()
+  //States
   const [loginState, setLoginState] = useState(false)
 
   useEffect(() => {
@@ -14,8 +19,9 @@ function WelcomePage() {
    checkLoginState()
 
    
-  }, [loginState])
+  }, [loginState])//useEffect runs every time loginState changes to redirect the user to the relevant page
 
+  //Checks for the login state by validating JWT token
   const checkLoginState = async () => {
     const retrivedToken = await localStorage.getItem('TWCtoken')
 
@@ -46,7 +52,7 @@ function WelcomePage() {
   }
 
   const handleAddContactBtn = () => {
-    navigate('contacts/new')
+    navigate('contacts/new') //Redirecting the user to "Add new contact" page
   }
 
  
@@ -60,7 +66,7 @@ function WelcomePage() {
           </div>
           <span className=' font-FutuBd font-bold text-5xl'>Welcome,</span>
           <span className='font-FuturaMdBt mt-8 font-normal text-4xl '>This is where your contacts will live. Click the button below  to add a new contact.</span>
-          <button onClick={handleAddContactBtn} className=' mt-20 font-FuturaMdBt w-fit h-fit pl-8 pr-8 pt-2 pb-2 font-medium text-white border-white border-2 rounded-3xl'> add your first contact</button>
+          <button onClick={handleAddContactBtn} className=' hover:scale-105 mt-20 font-FuturaMdBt w-fit h-fit pl-8 pr-8 pt-2 pb-2 font-medium text-white border-white border-2 rounded-3xl'> add your first contact</button>
         </div>
         <Logout/>
       </div>

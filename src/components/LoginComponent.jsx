@@ -1,3 +1,8 @@
+/**
+ * @description - This component handles the login logic
+ */
+
+//imports
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
@@ -8,6 +13,7 @@ import { jwtDecode } from 'jwt-decode'
 export default function Login({ toggleView }) {
 
   const navigate = useNavigate()
+  //States
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [emailError, setEmailError] = useState('')
@@ -19,8 +25,9 @@ export default function Login({ toggleView }) {
 
   useEffect(() => {
     checkLoginState()
-  }, [loginState]);
+  }, [loginState])//useEffect runs every time loginState changes to redirect the user to welcome page
 
+  //Checks for the login state by validating JWT token
   const checkLoginState = async () => {
     const retrivedToken = await localStorage.getItem('TWCtoken')
 
@@ -35,9 +42,9 @@ export default function Login({ toggleView }) {
 
         if (decodedToken.exp > currentTime) {
           setLoginState(true)
-          navigate('/')
+          navigate('/') //Redirecting the user to welcome page
         }else{
-          //Removing the token 
+          //Removing the token if expired
           await localStorage.removeItem('TWCtoken')
         }
 
@@ -49,7 +56,7 @@ export default function Login({ toggleView }) {
 
   }
   
-
+  //State change handlers
   const handleEmailChange = (e) => {
     setEmail(e.target.value)
   }
@@ -58,7 +65,7 @@ export default function Login({ toggleView }) {
     setPassword(e.target.value)
   }
 
-
+ //Validating password to ensure it has at least 8 characters.
   const validatePassword = () => {
 
     if (password.length < 8) {
@@ -70,6 +77,7 @@ export default function Login({ toggleView }) {
     }
   }
 
+  //Sending login request to the server
   const handleSubmit = async (e) => {
     e.preventDefault()
 
@@ -78,7 +86,7 @@ export default function Login({ toggleView }) {
 
 
     if (validPassword) {
-      //Send logic here.
+     
       const payload = {
         email: email,
         password: password
@@ -136,7 +144,7 @@ export default function Login({ toggleView }) {
             {passwordError && <p className=" text-red-500">{passwordError}</p>}
           </div>
           <div className=' w-full mt-10 justify-start'>
-            <button type="submit" className=' font-FuturaMdBt w-fit h-fit pl-8 pr-8 pt-2 pb-2 font-medium text-white border-white border-2 rounded-3xl'> login</button>
+            <button type="submit" className=' hover:scale-105 font-FuturaMdBt w-fit h-fit pl-8 pr-8 pt-2 pb-2 font-medium text-white border-white border-2 rounded-3xl'> login</button>
             <span className='font-FuturaMdBt ml-4 mr-4 text-white font-medium'>or</span>
             <span onClick={toggleView} className='cursor-pointer font-FuturaMdBt text-white font-medium text-decoration-line: underline underline-offset-2'>Click here to Register</span>
           </div>

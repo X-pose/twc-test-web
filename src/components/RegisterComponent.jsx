@@ -1,3 +1,7 @@
+/**
+ * @description - This component handles the registration logic
+ */
+//Imports
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
@@ -5,16 +9,16 @@ import axios from 'axios'
 export default function Registration({toggleView}) {
 
     const navigate = useNavigate()
+    //States
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
-    const [emailError, setEmailError] = useState('')
     const [passwordError, setPasswordError] = useState('')
     const [passwordMismatchError, setPasswordMismatchError] = useState('')
     const [authenticateError, setAuthenticateError] = useState('')
 
 
-
+    //State change handlers
     const handleEmailChange = (e) => {
         setEmail(e.target.value)
     }
@@ -28,7 +32,7 @@ export default function Registration({toggleView}) {
     }
 
 
-
+    //Validating password to ensure it has at least 8 characters.
     const validatePassword = () => {
 
         if (password.length < 8) {
@@ -40,6 +44,7 @@ export default function Registration({toggleView}) {
         }
     }
 
+    //Checking for password mismatches
     const checkPasswordMatch = () => {
         if (confirmPassword !== password) {
             setPasswordMismatchError('Passwords do not match. Please double-check and try again')
@@ -50,7 +55,7 @@ export default function Registration({toggleView}) {
         }
     }
 
-
+    //Registering user in DB
     const handleRegSubmit = async (e) => {
         e.preventDefault()
         //validating user inputs
@@ -71,7 +76,7 @@ export default function Registration({toggleView}) {
 
                 // Store the token in localStorage
                 localStorage.setItem('TWCtoken', token)
-                navigate('/')
+                navigate('/') //Redirecting user to welcome page. Server automatically logs in the user to the system upon successful registration
 
             }).catch(error => {
                 setAuthenticateError("User registration failed!")
@@ -100,7 +105,7 @@ export default function Registration({toggleView}) {
                             placeholder='e-mail'
                             required
                         />
-                        {emailError && <p className="text-red-500">{emailError}</p>}
+                        
                     </div>
                     <div >
                         <input className='placeholder-[#083F46] ::placeholder font-FuturaMdBt w-96 h-12 pl-10 mt-9 bg-white font-extrabold text-[#083F46] rounded-3xl'
@@ -128,7 +133,7 @@ export default function Registration({toggleView}) {
                         {passwordMismatchError && <p className=" text-red-500">{passwordMismatchError}</p>}
                     </div>
                     <div className='w-full mt-10 flex-col'>
-                        <button type="submit" className='font-FuturaMdBt w-fit h-fit pl-8 pr-8 pt-2 pb-2 font-medium text-white border-white border-2 rounded-3xl'>register</button>
+                        <button type="submit" className='hover:scale-105 font-FuturaMdBt w-fit h-fit pl-8 pr-8 pt-2 pb-2 font-medium text-white border-white border-2 rounded-3xl'>register</button>
 
                     </div>
                     {authenticateError && <p className=" text-red-500">{authenticateError}</p>}

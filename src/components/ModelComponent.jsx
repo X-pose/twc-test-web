@@ -2,7 +2,7 @@
 
 export default function Modal({ open, onClose, children }) {
   return (
-    // backdrop
+    // backdrop effect
     <div
       onClick={onClose}
       className={`
