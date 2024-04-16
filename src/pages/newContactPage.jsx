@@ -3,7 +3,7 @@
  */
 //Imports
 import React, { useEffect, useState } from 'react'
-import twcLoginArt from '../assets/img/TWCImgMain.svg'
+import twcLoginArt from '../assets/TWCImgMain.svg'
 import Logout from '../components/LogoutComponent'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
@@ -125,7 +125,7 @@ function NewContactPage() {
           <div className='mt-16'>
             <form onSubmit={handleAddContactBtn} className="grid lg:grid-cols-2 gap-10 ">
               <div className='flex items-center mt-2'>
-                <input className=' placeholder-[#083F46] ::placeholder font-FuturaMdBt w-96 h-12 pl-10  bg-white font-extrabold text-[#083F46] rounded-3xl'
+                <input className=' placeholder-[#083F46] ::placeholder font-FuturaMdBt w-96 h-12 pl-10  bg-white font-normal text-lg text-[#083F46] rounded-3xl'
                   type="text"
                   id="fullName"
                   name="fullName"
@@ -137,7 +137,7 @@ function NewContactPage() {
               </div>
 
               <div className='flex items-center mt-2'>
-                <input className='placeholder-[#083F46] ::placeholder font-FuturaMdBt w-96 h-12 pl-10  bg-white font-extrabold text-[#083F46] rounded-3xl'
+                <input className='placeholder-[#083F46] ::placeholder font-FuturaMdBt w-96 h-12 pl-10  bg-white font-normal text-lg text-[#083F46] rounded-3xl'
                   type="email"
                   id="email"
                   name="email"
@@ -148,7 +148,7 @@ function NewContactPage() {
                 />
               </div>
               <div className='flex items-center mt-2'>
-                <input className='placeholder-[#083F46] ::placeholder font-FuturaMdBt w-96 h-12 pl-10  bg-white font-extrabold text-[#083F46] rounded-3xl'
+                <input className='placeholder-[#083F46] ::placeholder font-FuturaMdBt w-96 h-12 pl-10  bg-white font-normal text-lg text-[#083F46] rounded-3xl'
                   type="text"
                   id="phoneNumber"
                   name="phoneNumber"
@@ -160,7 +160,7 @@ function NewContactPage() {
                 />
               </div>
               <div className='flex items-center justify-between mt-2'>
-                <span className="mr-4 font-FuturaMdBt">Gender:</span>
+                <span className="mr-4 font-FuturaMdBt">gender:</span>
                 <label className="mr-4 flex items-center">
                   <input
                     type="radio"
@@ -171,7 +171,7 @@ function NewContactPage() {
                     onChange={handleGenderChange}
                   />
                   <div className={`w-3 h-3 rounded-full border-2 border-white  ${gender === "Male" ? "bg-gray-500" : "bg-[#083F46]"}`}></div>
-                  <span className="ml-2 font-FuturaMdBt">Male</span>
+                  <span className="ml-2 font-FuturaMdBt">male</span>
                 </label>
                 <label className="mr-4 flex items-center">
                   <input
@@ -183,11 +183,11 @@ function NewContactPage() {
                     onChange={handleGenderChange}
                   />
                   <div className={`w-3 h-3 rounded-full border-2 border-white  ${gender === "Female" ? "bg-gray-500" : "bg-[#083F46]"}`}></div>
-                  <span className="ml-2 font-FuturaMdBt">Female</span>
+                  <span className="ml-2 font-FuturaMdBt">female</span>
                 </label>
               </div>
               <div className='col-span-2'>
-                <button type="submit" className='hover:scale-105 mt-10 font-FuturaMdBt w-fit h-fit pl-8 pr-8 pt-2 pb-2 font-medium text-white border-white border-2 rounded-3xl'>Add Your First Contact</button>
+                <button type="submit" className='hover:scale-105 mt-10 font-FuturaMdBt w-fit h-fit pl-8 pr-8 py-1 text-lg font-medium text-white border-white border-2 rounded-3xl'>add your first contact</button>
               </div>
             </form>
 

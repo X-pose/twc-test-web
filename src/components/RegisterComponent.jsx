@@ -96,7 +96,7 @@ export default function Registration({toggleView}) {
             <div>
                 <form onSubmit={handleRegSubmit}>
                     <div >
-                        <input className='placeholder-[#083F46] ::placeholder font-FuturaMdBt w-96 h-12 pl-10 mt-9 bg-white font-extrabold text-[#083F46] rounded-3xl'
+                        <input className='placeholder-[#083F46] ::placeholder text-lg font-FuturaMdBt w-96 h-12 pl-10 mt-9 bg-white font-normal text-[#083F46] rounded-3xl'
                             type="email"
                             id="email"
                             name="email"
@@ -108,7 +108,7 @@ export default function Registration({toggleView}) {
                         
                     </div>
                     <div >
-                        <input className='placeholder-[#083F46] ::placeholder font-FuturaMdBt w-96 h-12 pl-10 mt-9 bg-white font-extrabold text-[#083F46] rounded-3xl'
+                        <input className='placeholder-[#083F46] ::placeholder text-lg font-FuturaMdBt w-96 h-12 pl-10 mt-9 bg-white font-normal text-[#083F46] rounded-3xl'
                             type="password"
                             id="password"
                             name="password"
@@ -121,7 +121,7 @@ export default function Registration({toggleView}) {
                         {passwordError && <p className=" text-red-500">{passwordError}</p>}
                     </div>
                     <div >
-                        <input className='placeholder-[#083F46] ::placeholder font-FuturaMdBt w-96 h-12 pl-10 mt-9 bg-white font-extrabold text-[#083F46] rounded-3xl'
+                        <input className='placeholder-[#083F46] ::placeholder text-lg font-FuturaMdBt w-96 h-12 pl-10 mt-9 bg-white font-normal text-[#083F46] rounded-3xl'
                             type="password"
                             id="password"
                             name="password"
@@ -133,7 +133,7 @@ export default function Registration({toggleView}) {
                         {passwordMismatchError && <p className=" text-red-500">{passwordMismatchError}</p>}
                     </div>
                     <div className='w-full mt-10 flex-col'>
-                        <button type="submit" className='hover:scale-105 font-FuturaMdBt w-fit h-fit pl-8 pr-8 pt-2 pb-2 font-medium text-white border-white border-2 rounded-3xl'>register</button>
+                        <button type="submit" className='hover:scale-105 font-FuturaMdBt w-fit h-fit pl-8 pr-8 py-1 text-lg font-medium text-white border-white border-2 rounded-3xl'>register</button>
 
                     </div>
                     {authenticateError && <p className=" text-red-500">{authenticateError}</p>}

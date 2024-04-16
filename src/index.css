@@ -1,12 +1,12 @@
 
 @font-face {
   font-family: FuturaMdBt;
-  src:url('./assets/fonts/FuturaMediumBT.ttf')
+  src:url('./assets/FuturaMediumBT.ttf')
 }
 
 @font-face{
   font-family: FutuBd;
-  src:url('./assets/fonts/FutuBd.ttf')
+  src:url('./assets/FutuBd.ttf')
 }
 
 @tailwind base;

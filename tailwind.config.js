@@ -12,9 +12,9 @@ export default {
         
       },
       backgroundImage: {
-        'round-ellipse': "url('./src/assets/img/Ellipse.svg')",
-        'doodle-art':"url('./src/assets/img/DoodleTexture.svg')",
-        'angled-ellipse': "url('./src/assets/img/AngledEllipse.svg')"
+        'round-ellipse': "url('./src/assets/Ellipse.svg')",
+        'doodle-art':"url('./src/assets/DoodleTexture.svg')",
+        'angled-ellipse': "url('./src/assets/AngledEllipse.svg')"
         
         
       }

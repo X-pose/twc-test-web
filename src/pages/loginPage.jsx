@@ -3,7 +3,7 @@
  */
 //Imports
 import React, {useState } from 'react'
-import twcLoginArt from '../assets/img/TWCImgLogin.svg'
+import twcLoginArt from '../assets/TWCImgLogin.svg'
 import Login from '../components/LoginComponent'
 import Registration from '../components/RegisterComponent'
 

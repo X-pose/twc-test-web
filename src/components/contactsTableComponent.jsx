@@ -5,13 +5,13 @@
 //imoports
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import maleAvatar from '../assets/img/maleAvatar.png'
-import femaleAvatar from '../assets/img/femaleAvatar.png'
-import editIcon from '../assets/img/editIcon.svg'
-import deleteIcon from '../assets/img/deleteIcon.svg'
+import maleAvatar from '../assets/maleAvatar.png'
+import femaleAvatar from '../assets/femaleAvatar.png'
+import editIcon from '../assets/editIcon.svg'
+import deleteIcon from '../assets/deleteIcon.svg'
 import Modal from './ModelComponent'
-import editRowRectangleImg from '../assets/img/editRect.svg'
-import editRowSwitchGenderImg from '../assets/img/genderSwitch.svg'
+import editRowRectangleImg from '../assets/editRect.svg'
+import editRowSwitchGenderImg from '../assets/genderSwitch.svg'
 
 export default function ContactsTable() {
 
@@ -194,10 +194,10 @@ export default function ContactsTable() {
 
             <div className='flex flex-row font-FutuBd font-bold text-[#083F46] justify-start'>
                 <span className="px-4 py-2 w-24"></span>
-                <span className="px-4 py-2 mr-5 w-44">Full Name</span>
-                <span className="px-4 py-2 mr-5 w-28 ">Gender</span>
-                <span className="px-4 py-2 mr-5 w-56">Email</span>
-                <span className="px-4 py-2 mr-5 w-40">Phone Number</span>
+                <span className="px-4 py-2 mr-5 w-44">full name</span>
+                <span className="px-4 py-2 mr-5 w-28 ">gender</span>
+                <span className="px-4 py-2 mr-5 w-56">e-mail</span>
+                <span className="px-4 py-2 mr-5 w-40">phone number</span>
             </div>
 
             <div className=' overflow-y-auto overflow-x-auto'>
@@ -208,11 +208,11 @@ export default function ContactsTable() {
 
                             <tr key={item._id} className='flex justify-start items-center' >
                                 <td className="px-4 py-1 w-24"><img src={getAvatar(item.gender)} /></td>
-                                <td className=" mr-5 w-44 ">{editableRows[item._id] ? <div className='flex flex-row  bg-[#E7ECED]'> <input type="text" defaultValue={item.fullName} onChange={handleNameUpdate} className=' w-full px-4 py-1  bg-[#E7ECED]' /> <img src = {editRowRectangleImg} className='mr-1'/> </div>:  <div className='px-4 py-1'>{item.fullName}</div> }</td>
-                                <td className=" mr-5 w-28 ">{editableRows[item._id] ? (<div className="flex flex-row  bg-[#E7ECED]"><input type="text" value={updatedGender || item.gender} className="  pl-4 py-1 w-full bg-[#E7ECED]" readOnly onChange={handleGenderUpdate} /><button onClick={() => toggleGender()}> <img src = {editRowSwitchGenderImg} className=' w-5  h-fit mr-6'/></button> </div>  ) : ( <div className='px-4 py-1'>{item.gender}</div> )} </td>
+                                <td className=" mr-5 w-44 font-normal ">{editableRows[item._id] ? <div className='flex flex-row  bg-[#E7ECED]'> <input type="text" defaultValue={item.fullName} onChange={handleNameUpdate} className=' w-full px-4 py-1  bg-[#E7ECED]' /> <img src = {editRowRectangleImg} className='mr-1'/> </div>:  <div className='px-4 py-1'>{item.fullName}</div> }</td>
+                                <td className=" mr-5 w-28 font-normal">{editableRows[item._id] ? (<div className="flex flex-row  bg-[#E7ECED]"><input type="text" value={updatedGender || item.gender} className="  pl-4 py-1 w-full bg-[#E7ECED]" readOnly onChange={handleGenderUpdate} /><button onClick={() => toggleGender()}> <img src = {editRowSwitchGenderImg} className=' w-5  h-fit mr-6'/></button> </div>  ) : ( <div className='px-4 py-1'>{item.gender}</div> )} </td>
 
-                                <td className=" mr-5 w-56">{editableRows[item._id] ? <div className='flex flex-row  bg-[#E7ECED]'><input type="text" defaultValue={item.email} onChange={handleEmailUpdate} className=' px-4 py-1 w-full  bg-[#E7ECED]' /> <img src = {editRowRectangleImg} className='mr-1'/> </div> : <div className='px-4 py-1'>{item.email}</div> }</td>
-                                <td className="mr-5 w-40">{editableRows[item._id] ? <div className='flex flex-row  bg-[#E7ECED]'><input type="text" defaultValue={item.phoneNumber} onChange={handlePhoneNoUpdate} className=' px-4 py-1 w-full bg-[#E7ECED]' /> <img src = {editRowRectangleImg} className='mr-1'/> </div>:<div className='px-4 py-1'>{item.phoneNumber}</div> }</td>
+                                <td className=" mr-5 w-56 font-normal">{editableRows[item._id] ? <div className='flex flex-row  bg-[#E7ECED]'><input type="text" defaultValue={item.email} onChange={handleEmailUpdate} className=' px-4 py-1 w-full  bg-[#E7ECED]' /> <img src = {editRowRectangleImg} className='mr-1'/> </div> : <div className='px-4 py-1'>{item.email}</div> }</td>
+                                <td className="mr-5 w-40 font-normal">{editableRows[item._id] ? <div className='flex flex-row  bg-[#E7ECED]'><input type="text" defaultValue={item.phoneNumber} onChange={handlePhoneNoUpdate} className=' px-4 py-1 w-full bg-[#E7ECED]' /> <img src = {editRowRectangleImg} className='mr-1'/> </div>:<div className='px-4 py-1'>{item.phoneNumber}</div> }</td>
                                 <td className="mr-5 w-20 flex ">
                                     {editableRows[item._id] ?
                                         <div>
@@ -223,9 +223,7 @@ export default function ContactsTable() {
                                         </div>}
 
                                 </td>
-                                <td className="px-4 py-4">
-
-                                </td>
+                               
                             </tr>
                         ))}
                     </tbody>
@@ -240,12 +238,12 @@ export default function ContactsTable() {
 
                     <div className="mx-auto my-4 flex justify-center">
 
-                        <p className=" w-fit mb-5 text-xl font-semibold text-[#083F46]">
+                        <p className=" w-fit mb-5 text-2xl font-semibold text-[#083F46]">
                             Your contact has been saved successfully!
                         </p>
                     </div>
                     <div className="flex justify-center">
-                        <button className="font-FuturaMdBt w-fit h-fit px-8  py-2 font-medium bg-[#083F46] text-white rounded-3xl" onClick={() => setSaveModelOpen(false)}>Okay</button>
+                        <button className="font-FuturaMdBt w-fit h-fit px-8  py-2 text-lg font-medium bg-[#083F46] text-white rounded-3xl" onClick={() => setSaveModelOpen(false)}>Okay</button>
 
                     </div>
                 </div>
@@ -258,12 +256,12 @@ export default function ContactsTable() {
 
                         <div className="mx-auto my-4 flex justify-center">
 
-                            <p className=" w-fit mb-5 text-xl font-semibold text-[#083F46]">
+                            <p className=" w-fit mb-5 text-2xl font-semibold text-[#083F46]">
                                 Your contact has been deleted successfully!
                             </p>
                         </div>
                         <div className="flex justify-center">
-                            <button className="font-FuturaMdBt w-fit h-fit px-8  py-2 font-medium bg-[#083F46] text-white rounded-3xl" onClick={() => handleDeleteSuccess()}>Okay</button>
+                            <button className="font-FuturaMdBt w-fit h-fit px-8  py-2 font-medium text-lg bg-[#083F46] text-white rounded-3xl" onClick={() => handleDeleteSuccess()}>Okay</button>
 
                         </div>
                     </div>
@@ -272,13 +270,13 @@ export default function ContactsTable() {
                     <div className="text-center w-full">
                         <div className="mx-auto my-4 flex justify-center">
 
-                            <p className=" w-fit mb-5 text-xl font-semibold text-[#083F46]">
+                            <p className=" w-fit mb-5 text-2xl font-semibold text-[#083F46]">
                                 Do you want to delete the contact “{contactToBeDeleted.fullName}”?
                             </p>
                         </div>
                         <div className="flex justify-center">
-                            <button className="font-FuturaMdBt w-fit h-fit px-8 mx-2 py-2 font-medium bg-[#083F46] text-white rounded-3xl" onClick={() => deleteContact()}>Yes</button>
-                            <button className="font-FuturaMdBt w-fit h-fit px-8 mx-2 py-2 font-medium bg-white text-[#083F46] rounded-3xl border-2 border-[#083F46]" onClick={() => setDeleteModelOpen(false)}>Cancel</button>
+                            <button className="font-FuturaMdBt w-fit h-fit px-8 mx-2 py-2 font-medium bg-[#083F46] text-white text-lg rounded-3xl" onClick={() => deleteContact()}>Yes</button>
+                            <button className="font-FuturaMdBt w-fit h-fit px-5 mx-2 py-2  bg-white text-[#083F46] text-lg font-semibold rounded-3xl border-2 border-[#083F46]" onClick={() => setDeleteModelOpen(false)}>Cancel</button>
                         </div>
                     </div>
                 )}

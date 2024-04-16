@@ -3,7 +3,7 @@
  */
 //Imports
 import React, { useEffect, useState } from 'react'
-import twcLoginArt from '../assets/img/TWCImgMain.svg'
+import twcLoginArt from '../assets/TWCImgMain.svg'
 import Logout from '../components/LogoutComponent'
 import { useNavigate } from 'react-router-dom'
 import { jwtDecode } from 'jwt-decode'
@@ -66,7 +66,7 @@ function WelcomePage() {
           </div>
           <span className=' font-FutuBd font-bold text-5xl'>Welcome,</span>
           <span className='font-FuturaMdBt mt-8 font-normal text-4xl '>This is where your contacts will live. Click the button below  to add a new contact.</span>
-          <button onClick={handleAddContactBtn} className=' hover:scale-105 mt-20 font-FuturaMdBt w-fit h-fit pl-8 pr-8 pt-2 pb-2 font-medium text-white border-white border-2 rounded-3xl'> add your first contact</button>
+          <button onClick={handleAddContactBtn} className=' hover:scale-105 mt-20 font-FuturaMdBt w-fit h-fit pl-8 pr-8 py-1 text-lg font-medium text-white border-white border-2 rounded-3xl'> add your first contact</button>
         </div>
         <Logout/>
       </div>
