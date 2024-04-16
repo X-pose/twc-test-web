@@ -60,7 +60,7 @@ function AllContactPage() {
 
     <div className='w-screen h-screen flex bg-doodle-art bg-contain overflow-hidden'>
       <div className=' w-screen h-screen relative flex flex-col bg-angled-ellipse bg-center bg-no-repeat items-center'>
-        <div className=' h-fit w-fit flex justify-start flex-col text-white mt-10 mx-4 '>
+        <div className=' lg:scale-100 md:scale-75 sm:scale-50 h-fit w-fit flex justify-start flex-col text-white mt-10 mx-4 '>
           <div className='w-fit h-fit mb-10 flex justify-center items-center flex-col'>
             <img src={twcLoginArt} className=' size-44' />
           </div>

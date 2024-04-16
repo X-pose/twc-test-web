@@ -28,7 +28,7 @@ function LoginPage() {
         }
       </div>
       <div className='w-3/6 h-screen flex justify-center items-center flex-col'>
-        <img src={twcLoginArt} />
+        <img src={twcLoginArt} className='lg:scale-100 md:scale-75 sm:scale-50'/>
       </div>
     </div>
   )

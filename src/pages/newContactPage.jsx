@@ -115,7 +115,7 @@ function NewContactPage() {
   return (
     <div className='w-screen h-screen flex bg-doodle-art bg-contain overflow-hidden'>
       <div className=' w-screen relative h-screen flex flex-col bg-angled-ellipse bg-center bg-no-repeat items-center justify-center'>
-        <div className=' h-screen w-fit flex justify-start flex-col text-white ml-4 mr-4 pl-64 pr-64'>
+        <div className='lg:scale-100 md:scale-75 sm:scale-50 h-screen w-fit flex justify-start flex-col text-white ml-4 mr-4 pl-64 pr-64'>
           <div className='w-fit h-fit mt-10 mb-16 flex justify-center items-center flex-col'>
             <img src={twcLoginArt} className=' size-36' />
           </div>
@@ -123,7 +123,7 @@ function NewContactPage() {
             <span className='font-FutuBd font-bold text-5xl'>New contact</span>
           </div>
           <div className='mt-16'>
-            <form onSubmit={handleAddContactBtn} className="grid grid-cols-2 gap-10">
+            <form onSubmit={handleAddContactBtn} className="grid lg:grid-cols-2 gap-10 ">
               <div className='flex items-center mt-2'>
                 <input className=' placeholder-[#083F46] ::placeholder font-FuturaMdBt w-96 h-12 pl-10  bg-white font-extrabold text-[#083F46] rounded-3xl'
                   type="text"

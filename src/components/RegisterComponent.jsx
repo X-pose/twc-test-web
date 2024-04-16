@@ -89,7 +89,7 @@ export default function Registration({toggleView}) {
 
 
     return (
-        <div className='w-fit h-fit'>
+        <div className='w-fit h-fit lg:scale-100 md:scale-75 sm:scale-50'>
             <div className=' w-fit h-fit text-white flex flex-col justify-start items-start'>
                 <span className=' font-FutuBd font-bold text-5xl'>Register Now!</span>
             </div>
